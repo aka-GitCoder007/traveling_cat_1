@@ -8,12 +8,12 @@ interface EnquiryModalOptions {
   type?: 'package' | 'destination' | 'general';
 }
 
-interface EnquiryContextType {
+export interface EnquiryContextType {
   openEnquiry: (options: EnquiryModalOptions | string) => void;
   closeEnquiry: () => void;
 }
 
-const EnquiryContext = createContext<EnquiryContextType | undefined>(undefined);
+export const EnquiryContext = createContext<EnquiryContextType | undefined>(undefined);
 
 export const EnquiryProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
